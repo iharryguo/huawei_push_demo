@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.hmsdemo.molegame.huawei"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 90000000
+        versionName "9.0.0"
+        manifestPlaceholders = [PACKAGE_NAME: "com.hmsdemo.molegame.huawei", APPID:"100043771", CPID:"10086000000000293"]
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('lightregion.jks')
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storePassword 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            //Obfuscation configuration
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            // Signature configuration
+            signingConfig signingConfigs.release
+
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':hmsagents')
+}

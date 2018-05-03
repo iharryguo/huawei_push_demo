@@ -1,0 +1,495 @@
+Initialized native services in: C:\Users\harryguo\.gradle\native
+Found daemon DaemonInfo{pid=9724, address=[a7b22098-86bb-47a2-8b63-01410d0bb099 port:51398, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], state=Idle, lastBusy=1525335716891, context=DefaultDaemonContext[uid=58d3b9c0-122f-4643-9384-634ecda3b3fe,javaHome=C:\Program Files\Java\jdk1.8.0_121,daemonRegistryDir=C:\Users\harryguo\.gradle\daemon,pid=9724,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=128m,-XX:+ShowMessageBoxOnError,-XX:+HeapDumpOnOutOfMemoryError,-Xmx4096m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]} however its context does not match the desired criteria.
+At least one daemon option is different.
+Wanted: DefaultDaemonContext[uid=null,javaHome=C:\Program Files\Java\jdk1.8.0_121,daemonRegistryDir=C:\Users\harryguo\.gradle\daemon,pid=4136,idleTimeout=null,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=GBK,-Duser.country=CN,-Duser.language=zh,-Duser.variant]
+Actual: DefaultDaemonContext[uid=58d3b9c0-122f-4643-9384-634ecda3b3fe,javaHome=C:\Program Files\Java\jdk1.8.0_121,daemonRegistryDir=C:\Users\harryguo\.gradle\daemon,pid=9724,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=128m,-XX:+ShowMessageBoxOnError,-XX:+HeapDumpOnOutOfMemoryError,-Xmx4096m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]
+
+  Looking for a different daemon...
+The client will now receive all logging from the daemon (pid: 8324). The daemon log file: C:\Users\harryguo\.gradle\daemon\4.1\daemon-8324.out.log
+Starting 14th build in daemon [uptime: 3 hrs 33 mins 39.898 secs, performance: 100%, no major garbage collections]
+Using 8 worker leases.
+Creating new cache for fileHashes, path E:\SourceCode\pushdemo\.gradle\4.1\fileHashes\fileHashes.bin, access org.gradle.cache.internal.DefaultCacheAccess@7aedc835
+Creating new cache for plugin-use-metadata, path C:\Users\harryguo\.gradle\caches\4.1\plugin-resolution\plugin-use-metadata.bin, access org.gradle.cache.internal.DefaultCacheAccess@637badfe
+Creating new cache for client-status, path C:\Users\harryguo\.gradle\caches\4.1\plugin-resolution\client-status.bin, access org.gradle.cache.internal.DefaultCacheAccess@637badfe
+Starting Build
+Settings evaluated using settings file 'E:\SourceCode\pushdemo\settings.gradle'.
+Projects loaded. Root project using build file 'E:\SourceCode\pushdemo\build.gradle'.
+Included projects: [root project 'pushdemo', project ':app', project ':hmsagents']
+Evaluating root project 'pushdemo' using build file 'E:\SourceCode\pushdemo\build.gradle'.
+Creating new cache for metadata-1.1/results, path C:\Users\harryguo\.gradle\caches\transforms-1\metadata-1.1\results.bin, access org.gradle.cache.internal.DefaultCacheAccess@525c47a8
+Creating new cache for metadata-2.23/module-metadata, path C:\Users\harryguo\.gradle\caches\modules-2\metadata-2.23\module-metadata.bin, access org.gradle.cache.internal.DefaultCacheAccess@6f44b4bc
+Creating new cache for metadata-2.23/artifact-at-repository, path C:\Users\harryguo\.gradle\caches\modules-2\metadata-2.23\artifact-at-repository.bin, access org.gradle.cache.internal.DefaultCacheAccess@6f44b4bc
+Evaluating project ':app' using build file 'E:\SourceCode\pushdemo\app\build.gradle'.
+Creating configuration androidTestUtil
+Creating configuration compile
+Creating configuration apk
+Creating configuration provided
+Creating configuration api
+Creating configuration implementation
+Creating configuration runtimeOnly
+Creating configuration compileOnly
+Creating configuration wearApp
+Creating configuration annotationProcessor
+Creating configuration androidTestCompile
+Creating configuration androidTestApk
+Creating configuration androidTestProvided
+Creating configuration androidTestApi
+Creating configuration androidTestImplementation
+Creating configuration androidTestRuntimeOnly
+Creating configuration androidTestCompileOnly
+Creating configuration androidTestWearApp
+Creating configuration androidTestAnnotationProcessor
+Creating configuration testCompile
+Creating configuration testApk
+Creating configuration testProvided
+Creating configuration testApi
+Creating configuration testImplementation
+Creating configuration testRuntimeOnly
+Creating configuration testCompileOnly
+Creating configuration testWearApp
+Creating configuration testAnnotationProcessor
+Creating configuration debugCompile
+Creating configuration debugApk
+Creating configuration debugProvided
+Creating configuration debugApi
+Creating configuration debugImplementation
+Creating configuration debugRuntimeOnly
+Creating configuration debugCompileOnly
+Creating configuration debugWearApp
+Creating configuration debugAnnotationProcessor
+Creating configuration androidTestDebugCompile
+Creating configuration androidTestDebugApk
+Creating configuration androidTestDebugProvided
+Creating configuration androidTestDebugApi
+Creating configuration androidTestDebugImplementation
+Creating configuration androidTestDebugRuntimeOnly
+Creating configuration androidTestDebugCompileOnly
+Creating configuration androidTestDebugWearApp
+Creating configuration androidTestDebugAnnotationProcessor
+Creating configuration testDebugCompile
+Creating configuration testDebugApk
+Creating configuration testDebugProvided
+Creating configuration testDebugApi
+Creating configuration testDebugImplementation
+Creating configuration testDebugRuntimeOnly
+Creating configuration testDebugCompileOnly
+Creating configuration testDebugWearApp
+Creating configuration testDebugAnnotationProcessor
+Creating configuration releaseCompile
+Creating configuration releaseApk
+Creating configuration releaseProvided
+Creating configuration releaseApi
+Creating configuration releaseImplementation
+Creating configuration releaseRuntimeOnly
+Creating configuration releaseCompileOnly
+Creating configuration releaseWearApp
+Creating configuration releaseAnnotationProcessor
+Creating configuration testReleaseCompile
+Creating configuration testReleaseApk
+Creating configuration testReleaseProvided
+Creating configuration testReleaseApi
+Creating configuration testReleaseImplementation
+Creating configuration testReleaseRuntimeOnly
+Creating configuration testReleaseCompileOnly
+Creating configuration testReleaseWearApp
+Creating configuration testReleaseAnnotationProcessor
+Configuration 'compile' in project ':app' is deprecated. Use 'implementation' instead.
+Parsing the SDK, no caching allowed
+SDK initialized in 53 ms
+Using incremental javac compilation for :app debug.
+Using incremental javac compilation for :app debugUnitTest.
+Using incremental javac compilation for :app release.
+Using incremental javac compilation for :app releaseUnitTest.
+Using incremental javac compilation for :app debugAndroidTest.
+Evaluating project ':hmsagents' using build file 'E:\SourceCode\pushdemo\hmsagents\build.gradle'.
+Creating configuration androidTestUtil
+Creating configuration compile
+Creating configuration publish
+Creating configuration provided
+Creating configuration api
+Creating configuration implementation
+Creating configuration runtimeOnly
+Creating configuration compileOnly
+Creating configuration wearApp
+Creating configuration annotationProcessor
+Creating configuration androidTestCompile
+Creating configuration androidTestPublish
+Creating configuration androidTestProvided
+Creating configuration androidTestApi
+Creating configuration androidTestImplementation
+Creating configuration androidTestRuntimeOnly
+Creating configuration androidTestCompileOnly
+Creating configuration androidTestWearApp
+Creating configuration androidTestAnnotationProcessor
+Creating configuration testCompile
+Creating configuration testPublish
+Creating configuration testProvided
+Creating configuration testApi
+Creating configuration testImplementation
+Creating configuration testRuntimeOnly
+Creating configuration testCompileOnly
+Creating configuration testWearApp
+Creating configuration testAnnotationProcessor
+Creating configuration debugCompile
+Creating configuration debugPublish
+Creating configuration debugProvided
+Creating configuration debugApi
+Creating configuration debugImplementation
+Creating configuration debugRuntimeOnly
+Creating configuration debugCompileOnly
+Creating configuration debugWearApp
+Creating configuration debugAnnotationProcessor
+Creating configuration androidTestDebugCompile
+Creating configuration androidTestDebugPublish
+Creating configuration androidTestDebugProvided
+Creating configuration androidTestDebugApi
+Creating configuration androidTestDebugImplementation
+Creating configuration androidTestDebugRuntimeOnly
+Creating configuration androidTestDebugCompileOnly
+Creating configuration androidTestDebugWearApp
+Creating configuration androidTestDebugAnnotationProcessor
+Creating configuration testDebugCompile
+Creating configuration testDebugPublish
+Creating configuration testDebugProvided
+Creating configuration testDebugApi
+Creating configuration testDebugImplementation
+Creating configuration testDebugRuntimeOnly
+Creating configuration testDebugCompileOnly
+Creating configuration testDebugWearApp
+Creating configuration testDebugAnnotationProcessor
+Creating configuration releaseCompile
+Creating configuration releasePublish
+Creating configuration releaseProvided
+Creating configuration releaseApi
+Creating configuration releaseImplementation
+Creating configuration releaseRuntimeOnly
+Creating configuration releaseCompileOnly
+Creating configuration releaseWearApp
+Creating configuration releaseAnnotationProcessor
+Creating configuration testReleaseCompile
+Creating configuration testReleasePublish
+Creating configuration testReleaseProvided
+Creating configuration testReleaseApi
+Creating configuration testReleaseImplementation
+Creating configuration testReleaseRuntimeOnly
+Creating configuration testReleaseCompileOnly
+Creating configuration testReleaseWearApp
+Creating configuration testReleaseAnnotationProcessor
+Configuration 'compile' in project ':hmsagents' is deprecated. Use 'implementation' instead.
+Parsing the SDK, no caching allowed
+SDK initialized in 0 ms
+Using incremental javac compilation for :hmsagents debug.
+Using incremental javac compilation for :hmsagents debugUnitTest.
+Using incremental javac compilation for :hmsagents release.
+Using incremental javac compilation for :hmsagents releaseUnitTest.
+Using incremental javac compilation for :hmsagents debugAndroidTest.
+All projects evaluated.
+Selected primary task 'assembleDebug' from project :
+Creating new cache for annotation-processors, path E:\SourceCode\pushdemo\.gradle\4.1\fileContent\annotation-processors.bin, access org.gradle.cache.internal.DefaultCacheAccess@4bf54a16
+Tasks to be executed: [task ':app:preBuild', task ':hmsagents:preBuild', task ':hmsagents:preDebugBuild', task ':hmsagents:checkDebugManifest', task ':hmsagents:processDebugManifest', task ':app:preDebugBuild', task ':hmsagents:compileDebugAidl', task ':app:compileDebugAidl', task ':hmsagents:packageDebugRenderscript', task ':app:compileDebugRenderscript', task ':app:checkDebugManifest', task ':app:generateDebugBuildConfig', task ':app:prepareLintJar', task ':app:generateDebugResValues', task ':app:generateDebugResources', task ':hmsagents:compileDebugRenderscript', task ':hmsagents:generateDebugResValues', task ':hmsagents:generateDebugResources', task ':hmsagents:packageDebugResources', task ':app:mergeDebugResources', task ':app:createDebugCompatibleScreenManifests', task ':app:processDebugManifest', task ':app:splitsDiscoveryTaskDebug', task ':hmsagents:platformAttrExtractor', task ':hmsagents:processDebugResources', task ':app:processDebugResources', task ':app:generateDebugSources', task ':hmsagents:generateDebugBuildConfig', task ':hmsagents:prepareLintJar', task ':hmsagents:generateDebugSources', task ':hmsagents:javaPreCompileDebug', task ':hmsagents:compileDebugJavaWithJavac', task ':hmsagents:processDebugJavaRes', task ':hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug', task ':app:javaPreCompileDebug', task ':app:compileDebugJavaWithJavac', task ':app:compileDebugNdk', task ':app:compileDebugSources', task ':app:mergeDebugShaders', task ':app:compileDebugShaders', task ':app:generateDebugAssets', task ':hmsagents:mergeDebugShaders', task ':hmsagents:compileDebugShaders', task ':hmsagents:generateDebugAssets', task ':hmsagents:mergeDebugAssets', task ':app:mergeDebugAssets', task ':app:transformClassesWithDexBuilderForDebug', task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug', task ':app:transformDexArchiveWithDexMergerForDebug', task ':app:mergeDebugJniLibFolders', task ':hmsagents:compileDebugNdk', task ':hmsagents:mergeDebugJniLibFolders', task ':hmsagents:transformNativeLibsWithMergeJniLibsForDebug', task ':hmsagents:transformNativeLibsWithStripDebugSymbolForDebug', task ':hmsagents:transformNativeLibsWithIntermediateJniLibsForDebug', task ':app:transformNativeLibsWithMergeJniLibsForDebug', task ':app:transformNativeLibsWithStripDebugSymbolForDebug', task ':app:processDebugJavaRes', task ':app:transformResourcesWithMergeJavaResForDebug', task ':app:validateSigningDebug', task ':app:packageDebug', task ':app:assembleDebug', task ':hmsagents:extractDebugAnnotations', task ':hmsagents:mergeDebugConsumerProguardFiles', task ':hmsagents:transformResourcesWithMergeJavaResForDebug', task ':hmsagents:transformClassesAndResourcesWithSyncLibJarsForDebug', task ':hmsagents:transformNativeLibsWithSyncJniLibsForDebug', task ':hmsagents:bundleDebug', task ':hmsagents:compileDebugSources', task ':hmsagents:assembleDebug']
+Creating new cache for resourceHashesCache, path E:\SourceCode\pushdemo\.gradle\4.1\fileHashes\resourceHashesCache.bin, access org.gradle.cache.internal.DefaultCacheAccess@7aedc835
+Creating new cache for fileSnapshots, path E:\SourceCode\pushdemo\.gradle\4.1\taskHistory\fileSnapshots.bin, access org.gradle.cache.internal.DefaultCacheAccess@148dfe7e
+Creating new cache for taskHistory, path E:\SourceCode\pushdemo\.gradle\4.1\taskHistory\taskHistory.bin, access org.gradle.cache.internal.DefaultCacheAccess@148dfe7e
+:app:preBuild (Thread[Task worker for ':',5,main]) started.
+:app:preBuild
+Skipping task ':app:preBuild' as it has no actions.
+:app:preBuild UP-TO-DATE
+:app:preBuild (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:hmsagents:preBuild (Thread[Task worker for ':',5,main]) started.
+:hmsagents:preBuild
+Skipping task ':hmsagents:preBuild' as it has no actions.
+:hmsagents:preBuild UP-TO-DATE
+:hmsagents:preBuild (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:hmsagents:preDebugBuild (Thread[Task worker for ':',5,main]) started.
+:hmsagents:preDebugBuild
+Skipping task ':hmsagents:preDebugBuild' as it has no actions.
+:hmsagents:preDebugBuild UP-TO-DATE
+:hmsagents:preDebugBuild (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:hmsagents:checkDebugManifest (Thread[Task worker for ':',5,main]) started.
+:hmsagents:checkDebugManifest
+Putting task artifact state for task ':hmsagents:checkDebugManifest' into context took 0.0 secs.
+Skipping task ':hmsagents:checkDebugManifest' as it is up-to-date (took 0.0 secs).
+:hmsagents:checkDebugManifest UP-TO-DATE
+:hmsagents:checkDebugManifest (Thread[Task worker for ':',5,main]) completed. Took 0.0 secs.
+:hmsagents:processDebugManifest (Thread[Task worker for ':',5,main]) started.
+:hmsagents:processDebugManifest
+Putting task artifact state for task ':hmsagents:processDebugManifest' into context took 0.0 secs.
+Skipping task ':hmsagents:processDebugManifest' as it is up-to-date (took 0.001 secs).
+:hmsagents:processDebugManifest UP-TO-DATE
+:hmsagents:processDebugManifest (Thread[Task worker for ':',5,main]) completed. Took 0.001 secs.
+:app:preDebugBuild (Thread[Task worker for ':',5,main]) started.
+:app:preDebugBuild
+Putting task artifact state for task ':app:preDebugBuild' into context took 0.0 secs.
+Creating new cache for metadata-2.23/module-artifacts, path C:\Users\harryguo\.gradle\caches\modules-2\metadata-2.23\module-artifacts.bin, access org.gradle.cache.internal.DefaultCacheAccess@6f44b4bc
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:preDebugBuild' as it is up-to-date (took 0.048 secs).
+:app:preDebugBuild UP-TO-DATE
+:app:preDebugBuild (Thread[Task worker for ':',5,main]) completed. Took 0.048 secs.
+:hmsagents:compileDebugAidl (Thread[Task worker for ':',5,main]) started.
+:hmsagents:compileDebugAidl
+Putting task artifact state for task ':hmsagents:compileDebugAidl' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':hmsagents:compileDebugAidl' as it is up-to-date (took 0.008 secs).
+:hmsagents:compileDebugAidl UP-TO-DATE
+:hmsagents:compileDebugAidl (Thread[Task worker for ':',5,main]) completed. Took 0.008 secs.
+:app:compileDebugAidl (Thread[Task worker for ':',5,main]) started.
+:app:compileDebugAidl
+Putting task artifact state for task ':app:compileDebugAidl' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:compileDebugAidl' as it is up-to-date (took 0.002 secs).
+:app:compileDebugAidl UP-TO-DATE
+:app:compileDebugAidl (Thread[Task worker for ':',5,main]) completed. Took 0.003 secs.
+:hmsagents:packageDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:packageDebugRenderscript
+Putting task artifact state for task ':hmsagents:packageDebugRenderscript' into context took 0.0 secs.
+Skipping task ':hmsagents:packageDebugRenderscript' as it has no source files and no previous output files.
+:hmsagents:packageDebugRenderscript NO-SOURCE
+:hmsagents:packageDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:app:compileDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:compileDebugRenderscript
+Putting task artifact state for task ':app:compileDebugRenderscript' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:compileDebugRenderscript' as it is up-to-date (took 0.002 secs).
+:app:compileDebugRenderscript UP-TO-DATE
+:app:compileDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.002 secs.
+:app:checkDebugManifest (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:checkDebugManifest
+Putting task artifact state for task ':app:checkDebugManifest' into context took 0.0 secs.
+Skipping task ':app:checkDebugManifest' as it is up-to-date (took 0.001 secs).
+:app:checkDebugManifest UP-TO-DATE
+:app:checkDebugManifest (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:generateDebugBuildConfig (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:generateDebugBuildConfig
+Putting task artifact state for task ':app:generateDebugBuildConfig' into context took 0.0 secs.
+Skipping task ':app:generateDebugBuildConfig' as it is up-to-date (took 0.001 secs).
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:generateDebugBuildConfig (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:prepareLintJar (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:prepareLintJar
+Putting task artifact state for task ':app:prepareLintJar' into context took 0.0 secs.
+Skipping task ':app:prepareLintJar' as it is up-to-date (took 0.0 secs).
+:app:prepareLintJar UP-TO-DATE
+:app:prepareLintJar (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:app:generateDebugResValues (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:generateDebugResValues
+Putting task artifact state for task ':app:generateDebugResValues' into context took 0.0 secs.
+Skipping task ':app:generateDebugResValues' as it is up-to-date (took 0.0 secs).
+:app:generateDebugResValues UP-TO-DATE
+:app:generateDebugResValues (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:app:generateDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:generateDebugResources
+Skipping task ':app:generateDebugResources' as it has no actions.
+:app:generateDebugResources UP-TO-DATE
+:app:generateDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:compileDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:compileDebugRenderscript
+Putting task artifact state for task ':hmsagents:compileDebugRenderscript' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':hmsagents:compileDebugRenderscript' as it is up-to-date (took 0.001 secs).
+:hmsagents:compileDebugRenderscript UP-TO-DATE
+:hmsagents:compileDebugRenderscript (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:generateDebugResValues (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:generateDebugResValues
+Putting task artifact state for task ':hmsagents:generateDebugResValues' into context took 0.0 secs.
+Skipping task ':hmsagents:generateDebugResValues' as it is up-to-date (took 0.0 secs).
+:hmsagents:generateDebugResValues UP-TO-DATE
+:hmsagents:generateDebugResValues (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:generateDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:generateDebugResources
+Skipping task ':hmsagents:generateDebugResources' as it has no actions.
+:hmsagents:generateDebugResources UP-TO-DATE
+:hmsagents:generateDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:packageDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:packageDebugResources
+Putting task artifact state for task ':hmsagents:packageDebugResources' into context took 0.0 secs.
+Skipping task ':hmsagents:packageDebugResources' as it is up-to-date (took 0.001 secs).
+:hmsagents:packageDebugResources UP-TO-DATE
+:hmsagents:packageDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.002 secs.
+:app:mergeDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:mergeDebugResources
+Putting task artifact state for task ':app:mergeDebugResources' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:mergeDebugResources' as it is up-to-date (took 0.051 secs).
+:app:mergeDebugResources UP-TO-DATE
+:app:mergeDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.051 secs.
+:app:createDebugCompatibleScreenManifests (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:createDebugCompatibleScreenManifests
+Putting task artifact state for task ':app:createDebugCompatibleScreenManifests' into context took 0.0 secs.
+Skipping task ':app:createDebugCompatibleScreenManifests' as it is up-to-date (took 0.0 secs).
+:app:createDebugCompatibleScreenManifests UP-TO-DATE
+:app:createDebugCompatibleScreenManifests (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:app:processDebugManifest (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:processDebugManifest
+Putting task artifact state for task ':app:processDebugManifest' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:processDebugManifest' as it is up-to-date (took 0.001 secs).
+:app:processDebugManifest UP-TO-DATE
+:app:processDebugManifest (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:splitsDiscoveryTaskDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:splitsDiscoveryTaskDebug
+Putting task artifact state for task ':app:splitsDiscoveryTaskDebug' into context took 0.0 secs.
+Skipping task ':app:splitsDiscoveryTaskDebug' as it is up-to-date (took 0.0 secs).
+:app:splitsDiscoveryTaskDebug UP-TO-DATE
+:app:splitsDiscoveryTaskDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:platformAttrExtractor (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:platformAttrExtractor
+Putting task artifact state for task ':hmsagents:platformAttrExtractor' into context took 0.0 secs.
+Skipping task ':hmsagents:platformAttrExtractor' as it is up-to-date (took 0.001 secs).
+:hmsagents:platformAttrExtractor UP-TO-DATE
+:hmsagents:platformAttrExtractor (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:processDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:processDebugResources
+Putting task artifact state for task ':hmsagents:processDebugResources' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':hmsagents:processDebugResources' as it is up-to-date (took 0.011 secs).
+:hmsagents:processDebugResources UP-TO-DATE
+:hmsagents:processDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.012 secs.
+:app:processDebugResources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:processDebugResources
+Putting task artifact state for task ':app:processDebugResources' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:processDebugResources' as it is up-to-date (took 0.005 secs).
+:app:processDebugResources UP-TO-DATE
+:app:processDebugResources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.006 secs.
+:app:generateDebugSources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:generateDebugSources
+Skipping task ':app:generateDebugSources' as it has no actions.
+:app:generateDebugSources UP-TO-DATE
+:app:generateDebugSources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:generateDebugBuildConfig (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:generateDebugBuildConfig
+Putting task artifact state for task ':hmsagents:generateDebugBuildConfig' into context took 0.0 secs.
+Skipping task ':hmsagents:generateDebugBuildConfig' as it is up-to-date (took 0.002 secs).
+:hmsagents:generateDebugBuildConfig UP-TO-DATE
+:hmsagents:generateDebugBuildConfig (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.002 secs.
+:hmsagents:prepareLintJar (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:prepareLintJar
+Putting task artifact state for task ':hmsagents:prepareLintJar' into context took 0.0 secs.
+Skipping task ':hmsagents:prepareLintJar' as it is up-to-date (took 0.0 secs).
+:hmsagents:prepareLintJar UP-TO-DATE
+:hmsagents:prepareLintJar (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:generateDebugSources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:generateDebugSources
+Skipping task ':hmsagents:generateDebugSources' as it has no actions.
+:hmsagents:generateDebugSources UP-TO-DATE
+:hmsagents:generateDebugSources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:javaPreCompileDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:javaPreCompileDebug
+Putting task artifact state for task ':hmsagents:javaPreCompileDebug' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':hmsagents:javaPreCompileDebug' as it is up-to-date (took 0.001 secs).
+:hmsagents:javaPreCompileDebug UP-TO-DATE
+:hmsagents:javaPreCompileDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:compileDebugJavaWithJavac (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:compileDebugJavaWithJavac
+Putting task artifact state for task ':hmsagents:compileDebugJavaWithJavac' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\hmsagents\src\debug\java', not found
+Skipping task ':hmsagents:compileDebugJavaWithJavac' as it is up-to-date (took 0.018 secs).
+:hmsagents:compileDebugJavaWithJavac UP-TO-DATE
+:hmsagents:compileDebugJavaWithJavac (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.02 secs.
+:hmsagents:processDebugJavaRes (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:processDebugJavaRes
+Putting task artifact state for task ':hmsagents:processDebugJavaRes' into context took 0.0 secs.
+Skipping task ':hmsagents:processDebugJavaRes' as it has no source files and no previous output files.
+:hmsagents:processDebugJavaRes NO-SOURCE
+:hmsagents:processDebugJavaRes (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug
+Putting task artifact state for task ':hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug' into context took 0.0 secs.
+Skipping task ':hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug' as it is up-to-date (took 0.001 secs).
+:hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug UP-TO-DATE
+:hmsagents:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:javaPreCompileDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:javaPreCompileDebug
+Putting task artifact state for task ':app:javaPreCompileDebug' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:javaPreCompileDebug' as it is up-to-date (took 0.001 secs).
+:app:javaPreCompileDebug UP-TO-DATE
+:app:javaPreCompileDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.002 secs.
+:app:compileDebugJavaWithJavac (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:compileDebugJavaWithJavac
+Putting task artifact state for task ':app:compileDebugJavaWithJavac' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\app\src\debug\java', not found
+Skipping task ':app:compileDebugJavaWithJavac' as it is up-to-date (took 0.007 secs).
+:app:compileDebugJavaWithJavac UP-TO-DATE
+:app:compileDebugJavaWithJavac (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.009 secs.
+:app:compileDebugNdk (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:compileDebugNdk
+Putting task artifact state for task ':app:compileDebugNdk' into context took 0.0 secs.
+Skipping task ':app:compileDebugNdk' as it has no source files and no previous output files.
+:app:compileDebugNdk NO-SOURCE
+:app:compileDebugNdk (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:compileDebugSources (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:compileDebugSources
+Skipping task ':app:compileDebugSources' as it has no actions.
+:app:compileDebugSources UP-TO-DATE
+:app:compileDebugSources (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:mergeDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:mergeDebugShaders
+Putting task artifact state for task ':app:mergeDebugShaders' into context took 0.0 secs.
+Skipping task ':app:mergeDebugShaders' as it is up-to-date (took 0.001 secs).
+:app:mergeDebugShaders UP-TO-DATE
+:app:mergeDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:compileDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:compileDebugShaders
+Putting task artifact state for task ':app:compileDebugShaders' into context took 0.0 secs.
+Skipping task ':app:compileDebugShaders' as it is up-to-date (took 0.001 secs).
+:app:compileDebugShaders UP-TO-DATE
+:app:compileDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:generateDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:generateDebugAssets
+Skipping task ':app:generateDebugAssets' as it has no actions.
+:app:generateDebugAssets UP-TO-DATE
+:app:generateDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:mergeDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:mergeDebugShaders
+Putting task artifact state for task ':hmsagents:mergeDebugShaders' into context took 0.0 secs.
+Skipping task ':hmsagents:mergeDebugShaders' as it is up-to-date (took 0.0 secs).
+:hmsagents:mergeDebugShaders UP-TO-DATE
+:hmsagents:mergeDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:compileDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:compileDebugShaders
+Putting task artifact state for task ':hmsagents:compileDebugShaders' into context took 0.0 secs.
+Skipping task ':hmsagents:compileDebugShaders' as it is up-to-date (took 0.0 secs).
+:hmsagents:compileDebugShaders UP-TO-DATE
+:hmsagents:compileDebugShaders (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:hmsagents:generateDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:generateDebugAssets
+Skipping task ':hmsagents:generateDebugAssets' as it has no actions.
+:hmsagents:generateDebugAssets UP-TO-DATE
+:hmsagents:generateDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.0 secs.
+:hmsagents:mergeDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) started.
+:hmsagents:mergeDebugAssets
+Putting task artifact state for task ':hmsagents:mergeDebugAssets' into context took 0.0 secs.
+Skipping task ':hmsagents:mergeDebugAssets' as it is up-to-date (took 0.0 secs).
+:hmsagents:mergeDebugAssets UP-TO-DATE
+:hmsagents:mergeDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.001 secs.
+:app:mergeDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:mergeDebugAssets
+Putting task artifact state for task ':app:mergeDebugAssets' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:mergeDebugAssets' as it is up-to-date (took 0.003 secs).
+:app:mergeDebugAssets UP-TO-DATE
+:app:mergeDebugAssets (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.003 secs.
+:app:transformClassesWithDexBuilderForDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:transformClassesWithDexBuilderForDebug
+Putting task artifact state for task ':app:transformClassesWithDexBuilderForDebug' into context took 0.0 secs.
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+file or directory 'E:\SourceCode\pushdemo\hmsagents\libs', not found
+Skipping task ':app:transformClassesWithDexBuilderForDebug' as it is up-to-date (took 0.011 secs).
+:app:transformClassesWithDexBuilderForDebug UP-TO-DATE
+:app:transformClassesWithDexBuilderForDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.012 secs.
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug (Thread[Task worker for ':' Thread 5,5,main]) started.
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug
+Putting task artifact state for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug' into context took 0.0 secs.
+Executing task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug' (up-to-date check took 0.006 secs) due to:
+  Task has failed previously.
+All input files are considered out-of-date for incremental task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'.
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug FAILED
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug (Thread[Task worker for ':' Thread 5,5,main]) completed. Took 0.042 secs.
+35 actionable tasks: 1 executed, 34 up-to-date
