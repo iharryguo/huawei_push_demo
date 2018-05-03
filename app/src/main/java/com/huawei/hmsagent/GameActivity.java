@@ -6,10 +6,6 @@ import android.view.View;
 
 import com.huawei.android.hms.agent.HMSAgent;
 import com.huawei.android.hms.agent.common.handler.ConnectHandler;
-import com.huawei.android.hms.agent.game.GameLoginSignUtil;
-import com.huawei.android.hms.agent.game.handler.ICheckLoginSignHandler;
-import com.huawei.android.hms.agent.game.handler.LoginHandler;
-import com.huawei.android.hms.agent.game.handler.SaveInfoHandler;
 import com.huawei.hms.support.api.entity.game.GamePlayerInfo;
 import com.huawei.hms.support.api.entity.game.GameUserData;
 
@@ -47,71 +43,71 @@ public class GameActivity extends AgentBaseActivity {
      * 游戏登录示例 | Game Login Sample
      */
     private void login() {
-        showLog("game login: begin");
-        HMSAgent.Game.login(new LoginHandler() {
-            @Override
-            public void onResult(int retCode, GameUserData userData) {
-                if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && userData != null) {
-                    showLog("game login: onResult: retCode=" + retCode + "  user=" + userData.getDisplayName() + "|" + userData.getPlayerId() + "|" + userData.getIsAuth() + "|" + userData.getPlayerLevel());
-                    // 当登录成功时，此方法会回调2次， | This method recalls 2 times when the login is successful.
-                        // 第1次：只回调了playerid；特点：速度快；在要求快速登录，并且对安全要求不高时可以用此playerid登录 | 1th time: Only callback playerID; features: fast speed; You can log in with this playerID when you require fast logon and are not high on security requirements
-                        // 第2次：回调了所有信息，userData.getIsAuth()为1；此时需要对登录结果进行验签 | 2nd time: Callback All information, Userdata.getisauth () is 1;
-                    if (userData.getIsAuth() == 1) {
-                        // 如果需要对登录结果进行验签，请发送请求到开发者服务器进行（安全起见，私钥要放在服务端保存）。| If you need to check your login results, send a request to the developer server (for security, the private key is stored on the service side).
-                        // 下面工具方法仅为了展示验签请求的逻辑，实际实现应该放在开发者服务端。| The following tool method is intended only to show the logic of the verification request, and the actual implementation should be on the developer server.
-                        GameLoginSignUtil.checkLoginSign(appId, cpId, game_priv_key, game_public_key, userData, new ICheckLoginSignHandler() {
-                            @Override
-                            public void onCheckResult(String code, String resultDesc, boolean isCheckSuccess) {
-                                showLog("game login check sign: onResult: retCode=" + code + "  resultDesc=" + resultDesc + "  isCheckSuccess=" + isCheckSuccess);
-                            }
-                        });
-                    }
-                } else {
-                    showLog("game login: onResult: retCode=" + retCode);
-                }
-            }
-
-            @Override
-            public void onChange() {
-                // 此处帐号登录发生变化，需要重新登录 | Account login changed here, login required
-                showLog("game login: login changed!");
-                login();
-            }
-        }, 1);
+//        showLog("game login: begin");
+//        HMSAgent.Game.login(new LoginHandler() {
+//            @Override
+//            public void onResult(int retCode, GameUserData userData) {
+//                if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && userData != null) {
+//                    showLog("game login: onResult: retCode=" + retCode + "  user=" + userData.getDisplayName() + "|" + userData.getPlayerId() + "|" + userData.getIsAuth() + "|" + userData.getPlayerLevel());
+//                    // 当登录成功时，此方法会回调2次， | This method recalls 2 times when the login is successful.
+//                        // 第1次：只回调了playerid；特点：速度快；在要求快速登录，并且对安全要求不高时可以用此playerid登录 | 1th time: Only callback playerID; features: fast speed; You can log in with this playerID when you require fast logon and are not high on security requirements
+//                        // 第2次：回调了所有信息，userData.getIsAuth()为1；此时需要对登录结果进行验签 | 2nd time: Callback All information, Userdata.getisauth () is 1;
+//                    if (userData.getIsAuth() == 1) {
+//                        // 如果需要对登录结果进行验签，请发送请求到开发者服务器进行（安全起见，私钥要放在服务端保存）。| If you need to check your login results, send a request to the developer server (for security, the private key is stored on the service side).
+//                        // 下面工具方法仅为了展示验签请求的逻辑，实际实现应该放在开发者服务端。| The following tool method is intended only to show the logic of the verification request, and the actual implementation should be on the developer server.
+//                        GameLoginSignUtil.checkLoginSign(appId, cpId, game_priv_key, game_public_key, userData, new ICheckLoginSignHandler() {
+//                            @Override
+//                            public void onCheckResult(String code, String resultDesc, boolean isCheckSuccess) {
+//                                showLog("game login check sign: onResult: retCode=" + code + "  resultDesc=" + resultDesc + "  isCheckSuccess=" + isCheckSuccess);
+//                            }
+//                        });
+//                    }
+//                } else {
+//                    showLog("game login: onResult: retCode=" + retCode);
+//                }
+//            }
+//
+//            @Override
+//            public void onChange() {
+//                // 此处帐号登录发生变化，需要重新登录 | Account login changed here, login required
+//                showLog("game login: login changed!");
+//                login();
+//            }
+//        }, 1);
     }
 
     /**
      * 游戏显示浮标示例 | Game Show Floating Indicator example
      */
     private void showfloat(){
-        showLog("game showfloat");
-        HMSAgent.Game.showFloatWindow(this);
+//        showLog("game showfloat");
+//        HMSAgent.Game.showFloatWindow(this);
     }
 
     /**
      * 游戏隐藏浮标示例 | Game Hidden Floating Indicator example
      */
     private void hidefloat(){
-        showLog("game hidefloat");
-        HMSAgent.Game.hideFloatWindow(this);
+//        showLog("game hidefloat");
+//        HMSAgent.Game.hideFloatWindow(this);
     }
 
     /**
      * 游戏保存玩家信息示例 | Game Save player Information sample
      */
     private void savePlayerInfo() {
-        showLog("game savePlayerInfo: begin");
-        GamePlayerInfo gpi = new GamePlayerInfo();
-        gpi.area = "20";
-        gpi.rank = "level 56";
-        gpi.role = "hunter";
-        gpi.sociaty = "Red Cliff II";
-        HMSAgent.Game.savePlayerInfo(gpi, new SaveInfoHandler() {
-            @Override
-            public void onResult(int retCode) {
-                showLog("game savePlayerInfo: onResult=" + retCode);
-            }
-        });
+//        showLog("game savePlayerInfo: begin");
+//        GamePlayerInfo gpi = new GamePlayerInfo();
+//        gpi.area = "20";
+//        gpi.rank = "level 56";
+//        gpi.role = "hunter";
+//        gpi.sociaty = "Red Cliff II";
+//        HMSAgent.Game.savePlayerInfo(gpi, new SaveInfoHandler() {
+//            @Override
+//            public void onResult(int retCode) {
+//                showLog("game savePlayerInfo: onResult=" + retCode);
+//            }
+//        });
     }
 
     /**

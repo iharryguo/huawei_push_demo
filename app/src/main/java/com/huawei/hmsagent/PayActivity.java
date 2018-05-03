@@ -11,11 +11,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.huawei.android.hms.agent.HMSAgent;
-import com.huawei.android.hms.agent.pay.PaySignUtil;
-import com.huawei.android.hms.agent.pay.handler.GetOrderHandler;
-import com.huawei.android.hms.agent.pay.handler.GetProductDetailsHandler;
-import com.huawei.android.hms.agent.pay.handler.PayHandler;
-import com.huawei.android.hms.agent.pay.handler.ProductPayHandler;
+//import com.huawei.android.hms.agent.pay.PaySignUtil;
+//import com.huawei.android.hms.agent.pay.handler.GetOrderHandler;
+//import com.huawei.android.hms.agent.pay.handler.GetProductDetailsHandler;
+//import com.huawei.android.hms.agent.pay.handler.PayHandler;
+//import com.huawei.android.hms.agent.pay.handler.ProductPayHandler;
 import com.huawei.hms.support.api.entity.pay.OrderRequest;
 import com.huawei.hms.support.api.entity.pay.PayReq;
 import com.huawei.hms.support.api.entity.pay.PayStatusCodes;
@@ -128,79 +128,79 @@ public class PayActivity extends AgentBaseActivity {
      * 普通支付示例 | Common payment Examples
      */
     private void pay() {
-        showLog("pay: begin");
-        EditText etAmount = (EditText) findViewById(R.id.et_amount);
-        float amount = 0;
-        if (etAmount != null) {
-            String text = etAmount.getText().toString();
-            if (!TextUtils.isEmpty(text)) {
-                try {
-                    amount = Float.valueOf(text);
-                } catch (NumberFormatException e) {
-                    showLog("price format error");
-                }
-            }
-        }
-
-        PayReq payReq = createPayReq(amount);
-        HMSAgent.Pay.pay(payReq, new PayHandler() {
-            @Override
-            public void onResult(int retCode, PayResultInfo payInfo) {
-            if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && payInfo != null) {
-                boolean checkRst = PaySignUtil.checkSign(payInfo, pay_pub_key);
-                showLog("pay: onResult: pay success and checksign=" + checkRst);
-                if (checkRst) {
-                    // 支付成功并且验签成功，发放商品 | Payment successful and successful verification, distribution of goods
-                } else {
-                    // 签名失败，需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Signature failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
-                }
-            } else if (retCode == HMSAgent.AgentResultCode.ON_ACTIVITY_RESULT_ERROR
-                    || retCode == PayStatusCodes.PAY_STATE_TIME_OUT
-                    || retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
-                // 需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。 | Pay failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
-            } else {
-                showLog("pay: onResult: pay fail=" + retCode);
-                // 其他错误码意义参照支付api参考 | Other error code meaning reference payment API reference
-            }
-            }
-        });
-
-        // 将requestid缓存，供查询订单 | RequestID Cache for Query order
-        addRequestIdToCache(payReq.getRequestId());
+//        showLog("pay: begin");
+//        EditText etAmount = (EditText) findViewById(R.id.et_amount);
+//        float amount = 0;
+//        if (etAmount != null) {
+//            String text = etAmount.getText().toString();
+//            if (!TextUtils.isEmpty(text)) {
+//                try {
+//                    amount = Float.valueOf(text);
+//                } catch (NumberFormatException e) {
+//                    showLog("price format error");
+//                }
+//            }
+//        }
+//
+//        PayReq payReq = createPayReq(amount);
+//        HMSAgent.Pay.pay(payReq, new PayHandler() {
+//            @Override
+//            public void onResult(int retCode, PayResultInfo payInfo) {
+//            if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && payInfo != null) {
+//                boolean checkRst = PaySignUtil.checkSign(payInfo, pay_pub_key);
+//                showLog("pay: onResult: pay success and checksign=" + checkRst);
+//                if (checkRst) {
+//                    // 支付成功并且验签成功，发放商品 | Payment successful and successful verification, distribution of goods
+//                } else {
+//                    // 签名失败，需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Signature failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
+//                }
+//            } else if (retCode == HMSAgent.AgentResultCode.ON_ACTIVITY_RESULT_ERROR
+//                    || retCode == PayStatusCodes.PAY_STATE_TIME_OUT
+//                    || retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
+//                // 需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。 | Pay failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
+//            } else {
+//                showLog("pay: onResult: pay fail=" + retCode);
+//                // 其他错误码意义参照支付api参考 | Other error code meaning reference payment API reference
+//            }
+//            }
+//        });
+//
+//        // 将requestid缓存，供查询订单 | RequestID Cache for Query order
+//        addRequestIdToCache(payReq.getRequestId());
     }
 
     /**
      * PMS支付示例 | PMS Payment Example
      */
     private void pmsPay(String productNo) {
-        showLog("PMS pay: begin");
-
-        ProductPayRequest payReq = createProductPayReq(productNo);
-        HMSAgent.Pay.productPay(payReq, new ProductPayHandler() {
-            @Override
-            public void onResult(int retCode, ProductPayResultInfo payInfo) {
-                if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && payInfo != null) {
-                    boolean checkRst = PaySignUtil.checkSign(payInfo, pay_pub_key);
-                    showLog("PMS pay: onResult: pay success and checksign=" + checkRst + "\n");
-                    if (checkRst) {
-                        // 支付成功并且验签成功，发放商品 | Payment successful and successful verification, distribution of goods
-                    } else {
-                        // 签名失败，需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Signature failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
-                    }
-                } else if (retCode == HMSAgent.AgentResultCode.ON_ACTIVITY_RESULT_ERROR
-                        || retCode == PayStatusCodes.PAY_STATE_TIME_OUT
-                        || retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
-                    showLog("PMS pay: onResult: need wait for result, rstcode=" + retCode + "\n");
-                    // 需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Need to query order status: For stand-alone applications without servers, call Query order interface query, other application to Developer Server query order status.
-                } else {
-                    showLog("PMS pay: onResult: pay fail=" + retCode + "\n");
-                    // 其他错误码意义参照支付api参考 | Other error code meaning reference payment API reference
-                }
-            }
-        });
-
-        // 将requestid缓存，供查询订单 | RequestID Cache for Query order
-        addRequestIdToCache(payReq.getRequestId());
+//        showLog("PMS pay: begin");
+//
+//        ProductPayRequest payReq = createProductPayReq(productNo);
+//        HMSAgent.Pay.productPay(payReq, new ProductPayHandler() {
+//            @Override
+//            public void onResult(int retCode, ProductPayResultInfo payInfo) {
+//                if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && payInfo != null) {
+//                    boolean checkRst = PaySignUtil.checkSign(payInfo, pay_pub_key);
+//                    showLog("PMS pay: onResult: pay success and checksign=" + checkRst + "\n");
+//                    if (checkRst) {
+//                        // 支付成功并且验签成功，发放商品 | Payment successful and successful verification, distribution of goods
+//                    } else {
+//                        // 签名失败，需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Signature failed, need to query order status: For stand-alone applications without servers, call Query order interface query, other application to the Developer Server query order status.
+//                    }
+//                } else if (retCode == HMSAgent.AgentResultCode.ON_ACTIVITY_RESULT_ERROR
+//                        || retCode == PayStatusCodes.PAY_STATE_TIME_OUT
+//                        || retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
+//                    showLog("PMS pay: onResult: need wait for result, rstcode=" + retCode + "\n");
+//                    // 需要查询订单状态：对于没有服务器的单机应用，调用查询订单接口查询；其他应用到开发者服务器查询订单状态。| Need to query order status: For stand-alone applications without servers, call Query order interface query, other application to Developer Server query order status.
+//                } else {
+//                    showLog("PMS pay: onResult: pay fail=" + retCode + "\n");
+//                    // 其他错误码意义参照支付api参考 | Other error code meaning reference payment API reference
+//                }
+//            }
+//        });
+//
+//        // 将requestid缓存，供查询订单 | RequestID Cache for Query order
+//        addRequestIdToCache(payReq.getRequestId());
     }
 
     /**
@@ -208,59 +208,59 @@ public class PayActivity extends AgentBaseActivity {
      * @param productNos pms商品编码，多个以“|”分割，最多支持20个。 | PMS commodity codes, multiple with "|" Split, supports up to 20
      */
     private void getProductDetail(String productNos) {
-        showLog("getProductDetails: begin");
-
-        ProductDetailRequest request = new ProductDetailRequest();
-
-        /**
-         * 生成requestId | Generate RequestID
-         */
-        DateFormat format = new java.text.SimpleDateFormat("yyyyMMddhhmmssSSS");
-        int random= new SecureRandom().nextInt() % 100000;
-        random = random < 0 ? -random : random;
-        String requestId = format.format(new Date());
-        requestId = String.format("%s%05d", requestId, random);
-
-        // 商户id，又名“cpid”，“支付id”。来源于华为开发者联盟，移动应用详情页。| Merchant ID, also known as "Cpid", "Payment ID". From the Huawei Developer Alliance, mobile application Details page.
-        request.merchantId = cpId;
-
-        // 应用id。来源于华为开发者联盟，移动应用详情页。| The application ID. From the Huawei Developer Alliance, mobile application Details page.
-        request.applicationID = appId;
-
-        // 商户订单号。来源：开发者应用在发起请求前生成，用来唯一标识一次请求。注意：该字段中不能包含特殊字符，包括# " & / ? $ ^ *:) \ < > , | .,不支持中文。| Merchant Order number. Source: The developer application is generated before the request is initiated to uniquely identify the request. Note: This field cannot contain special characters, including # "&/? $ ^ *:) \ < >, |., not supported in Chinese
-        request.requestId = requestId;
-
-        // 商品编码。需要获取价格信息的productNo列表，多个商品编码以竖线分割，一次查询最多支持20个No。| Product Code. Need to get the price information of the Productno list, multiple product codes are divided by vertical bar, one query supports up to 20 No.
-        // 注意：所查询的productNo必须属于对应的packageName,且在应用内唯一。| Note: The queried productno must belong to the corresponding PackageName and be unique within the application.
-        request.productNos = productNos;
-
-        HMSAgent.Pay.getProductDetails(request, new GetProductDetailsHandler() {
-            @Override
-            public void onResult(int rst, ProductDetailResult result) {
-                if (result != null) {
-                    showLog("getProductDetails: getRequestId=" + result.getRequestId() + " rstCode=" + rst);
-                    List<ProductDetail> productDetailsLst = result.getProductList();
-                    if (productDetailsLst != null) {
-                        for (int i=0; i<productDetailsLst.size(); i++) {
-                            ProductDetail detail = productDetailsLst.get(i);
-                            showLog("getProductDetails: No=" + detail.getProductNo()
-                                    + "\n Title=" + detail.getProductName()
-                                    + "\n Desc=" + detail.getProductDesc()
-                                    + "\n Price=" + detail.getPrice() + "\n");
-                        }
-                    }
-                    List<ProductFailObject> productDetailsFailLst = result.getFailList();
-                    if (productDetailsFailLst != null) {
-                        for (int i=0; i<productDetailsFailLst.size(); i++) {
-                            ProductFailObject detailFail = productDetailsFailLst.get(i);
-                            showLog("getProductDetailsFail: No=" + detailFail.getProductNo() + "  rstCode=" + detailFail.getCode()+"  msg=" + detailFail.getMsg() + "\n");
-                        }
-                    }
-                } else {
-                    showLog("getProductDetails: error=" + rst + "\n");
-                }
-            }
-        });
+//        showLog("getProductDetails: begin");
+//
+//        ProductDetailRequest request = new ProductDetailRequest();
+//
+//        /**
+//         * 生成requestId | Generate RequestID
+//         */
+//        DateFormat format = new java.text.SimpleDateFormat("yyyyMMddhhmmssSSS");
+//        int random= new SecureRandom().nextInt() % 100000;
+//        random = random < 0 ? -random : random;
+//        String requestId = format.format(new Date());
+//        requestId = String.format("%s%05d", requestId, random);
+//
+//        // 商户id，又名“cpid”，“支付id”。来源于华为开发者联盟，移动应用详情页。| Merchant ID, also known as "Cpid", "Payment ID". From the Huawei Developer Alliance, mobile application Details page.
+//        request.merchantId = cpId;
+//
+//        // 应用id。来源于华为开发者联盟，移动应用详情页。| The application ID. From the Huawei Developer Alliance, mobile application Details page.
+//        request.applicationID = appId;
+//
+//        // 商户订单号。来源：开发者应用在发起请求前生成，用来唯一标识一次请求。注意：该字段中不能包含特殊字符，包括# " & / ? $ ^ *:) \ < > , | .,不支持中文。| Merchant Order number. Source: The developer application is generated before the request is initiated to uniquely identify the request. Note: This field cannot contain special characters, including # "&/? $ ^ *:) \ < >, |., not supported in Chinese
+//        request.requestId = requestId;
+//
+//        // 商品编码。需要获取价格信息的productNo列表，多个商品编码以竖线分割，一次查询最多支持20个No。| Product Code. Need to get the price information of the Productno list, multiple product codes are divided by vertical bar, one query supports up to 20 No.
+//        // 注意：所查询的productNo必须属于对应的packageName,且在应用内唯一。| Note: The queried productno must belong to the corresponding PackageName and be unique within the application.
+//        request.productNos = productNos;
+//
+//        HMSAgent.Pay.getProductDetails(request, new GetProductDetailsHandler() {
+//            @Override
+//            public void onResult(int rst, ProductDetailResult result) {
+//                if (result != null) {
+//                    showLog("getProductDetails: getRequestId=" + result.getRequestId() + " rstCode=" + rst);
+//                    List<ProductDetail> productDetailsLst = result.getProductList();
+//                    if (productDetailsLst != null) {
+//                        for (int i=0; i<productDetailsLst.size(); i++) {
+//                            ProductDetail detail = productDetailsLst.get(i);
+//                            showLog("getProductDetails: No=" + detail.getProductNo()
+//                                    + "\n Title=" + detail.getProductName()
+//                                    + "\n Desc=" + detail.getProductDesc()
+//                                    + "\n Price=" + detail.getPrice() + "\n");
+//                        }
+//                    }
+//                    List<ProductFailObject> productDetailsFailLst = result.getFailList();
+//                    if (productDetailsFailLst != null) {
+//                        for (int i=0; i<productDetailsFailLst.size(); i++) {
+//                            ProductFailObject detailFail = productDetailsFailLst.get(i);
+//                            showLog("getProductDetailsFail: No=" + detailFail.getProductNo() + "  rstCode=" + detailFail.getCode()+"  msg=" + detailFail.getMsg() + "\n");
+//                        }
+//                    }
+//                } else {
+//                    showLog("getProductDetails: error=" + rst + "\n");
+//                }
+//            }
+//        });
     }
 
     /**
@@ -302,54 +302,54 @@ public class PayActivity extends AgentBaseActivity {
      * @param reqId 要查询的商品订单号 | Product order number to query
      */
     private void getPayDetail(final String reqId) {
-        OrderRequest or = new OrderRequest();
-
-        showLog("checkPay: begin=" + reqId);
-        or.setRequestId(reqId);
-        or.setTime(String.valueOf(System.currentTimeMillis()));
-        or.setKeyType("1");
-        or.setMerchantId(cpId);
-
-        //对查询订单请求信息进行签名,建议CP在服务器端储存签名私钥，并在服务器端进行签名操作。| To sign the query order request information, it is recommended that CP store the signature private key on the server side and sign the operation on the server side.
-        //在服务端进行签名的cp可以将getStringForSign返回的待签名字符串传给服务端进行签名 | The CP, signed on the server side, can pass the pending signature string returned by Getstringforsign to the service side for signature
-        or.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(or), pay_priv_key);
-        HMSAgent.Pay.getOrderDetail(or, new GetOrderHandler() {
-            @Override
-            public void onResult(int retCode, OrderResult checkPayResult) {
-                showLog("checkPay: requId="+reqId+"  retCode=" + retCode);
-                if (checkPayResult != null && checkPayResult.getReturnCode() == retCode) {
-                    // 处理支付业务返回码 | Processing Payment Business return code
-                    if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS) {
-                        boolean checkRst = PaySignUtil.checkSign(checkPayResult, pay_pub_key);
-                        if (checkRst) {
-                            // 支付成功，发放对应商品 | Pay success, distribute the corresponding goods
-                            showLog("checkPay: Pay successfully, distribution of goods");
-                        } else {
-                            // 验签失败，当支付失败处理 | Verification fails when payment fails to deal with
-                            showLog("checkPay: Failed to verify signature, pay failed");
-                        }
-
-                        // 不需要再查询 | No more queries
-                        removeCacheRequestId(checkPayResult.getRequestId());
-                    } else if (retCode == PayStatusCodes.ORDER_STATUS_HANDLING
-                            || retCode == PayStatusCodes.ORDER_STATUS_UNTREATED
-                            || retCode == PayStatusCodes.PAY_STATE_TIME_OUT) {
-                        // 未处理完，需要重新查询。如30分钟后再次查询。超过24小时当支付失败处理 | Not finished processing, you need to requery. such as 30 minutes after the query again. More than 24 hours when payment fails to handle
-                        showLog("checkPay: Pay failed. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
-                    } else if (retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
-                        // 网络失败，需要重新查询 | Network failure, need to Requery
-                        showLog("checkPay: A network problem caused the payment to fail. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
-                    } else {
-                        // 支付失败，不需要再查询 | Payment failed, no more queries required
-                        showLog("checkPay: Pay failed. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
-                        removeCacheRequestId(reqId);
-                    }
-                } else {
-                    // 没有结果回来，需要重新查询。如30分钟后再次查询。超过24小时当支付失败处理 | No results back, you need to requery. such as 30 minutes after the query again. More than 24 hours when payment fails to handle
-                    showLog("checkPay: Pay failed. errorCode="+retCode);
-                }
-            }
-        });
+//        OrderRequest or = new OrderRequest();
+//
+//        showLog("checkPay: begin=" + reqId);
+//        or.setRequestId(reqId);
+//        or.setTime(String.valueOf(System.currentTimeMillis()));
+//        or.setKeyType("1");
+//        or.setMerchantId(cpId);
+//
+//        //对查询订单请求信息进行签名,建议CP在服务器端储存签名私钥，并在服务器端进行签名操作。| To sign the query order request information, it is recommended that CP store the signature private key on the server side and sign the operation on the server side.
+//        //在服务端进行签名的cp可以将getStringForSign返回的待签名字符串传给服务端进行签名 | The CP, signed on the server side, can pass the pending signature string returned by Getstringforsign to the service side for signature
+//        or.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(or), pay_priv_key);
+//        HMSAgent.Pay.getOrderDetail(or, new GetOrderHandler() {
+//            @Override
+//            public void onResult(int retCode, OrderResult checkPayResult) {
+//                showLog("checkPay: requId="+reqId+"  retCode=" + retCode);
+//                if (checkPayResult != null && checkPayResult.getReturnCode() == retCode) {
+//                    // 处理支付业务返回码 | Processing Payment Business return code
+//                    if (retCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS) {
+//                        boolean checkRst = PaySignUtil.checkSign(checkPayResult, pay_pub_key);
+//                        if (checkRst) {
+//                            // 支付成功，发放对应商品 | Pay success, distribute the corresponding goods
+//                            showLog("checkPay: Pay successfully, distribution of goods");
+//                        } else {
+//                            // 验签失败，当支付失败处理 | Verification fails when payment fails to deal with
+//                            showLog("checkPay: Failed to verify signature, pay failed");
+//                        }
+//
+//                        // 不需要再查询 | No more queries
+//                        removeCacheRequestId(checkPayResult.getRequestId());
+//                    } else if (retCode == PayStatusCodes.ORDER_STATUS_HANDLING
+//                            || retCode == PayStatusCodes.ORDER_STATUS_UNTREATED
+//                            || retCode == PayStatusCodes.PAY_STATE_TIME_OUT) {
+//                        // 未处理完，需要重新查询。如30分钟后再次查询。超过24小时当支付失败处理 | Not finished processing, you need to requery. such as 30 minutes after the query again. More than 24 hours when payment fails to handle
+//                        showLog("checkPay: Pay failed. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
+//                    } else if (retCode == PayStatusCodes.PAY_STATE_NET_ERROR) {
+//                        // 网络失败，需要重新查询 | Network failure, need to Requery
+//                        showLog("checkPay: A network problem caused the payment to fail. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
+//                    } else {
+//                        // 支付失败，不需要再查询 | Payment failed, no more queries required
+//                        showLog("checkPay: Pay failed. errorCode="+retCode+"  errMsg=" + checkPayResult.getReturnDesc());
+//                        removeCacheRequestId(reqId);
+//                    }
+//                } else {
+//                    // 没有结果回来，需要重新查询。如30分钟后再次查询。超过24小时当支付失败处理 | No results back, you need to requery. such as 30 minutes after the query again. More than 24 hours when payment fails to handle
+//                    showLog("checkPay: Pay failed. errorCode="+retCode);
+//                }
+//            }
+//        });
     }
 
     private void addRequestIdToCache(String requestId) {
@@ -416,7 +416,7 @@ public class PayActivity extends AgentBaseActivity {
 
         //对单机应用可以直接调用此方法对请求信息签名，非单机应用一定要在服务器端储存签名私钥，并在服务器端进行签名操作。| For stand-alone applications, this method can be called directly to the request information signature, not stand-alone application must store the signature private key on the server side, and sign operation on the server side.
         // 在服务端进行签名的cp可以将getStringForSign返回的待签名字符串传给服务端进行签名 | The CP, signed on the server side, can pass the pending signature string returned by Getstringforsign to the service side for signature
-        payReq.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(payReq), pay_priv_key);
+        // payReq.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(payReq), pay_priv_key);
 
         return payReq;
     }
@@ -464,7 +464,7 @@ public class PayActivity extends AgentBaseActivity {
 
         //对单机应用可以直接调用此方法对请求信息签名，非单机应用一定要在服务器端储存签名私钥，并在服务器端进行签名操作。| For stand-alone applications, this method can be called directly to the request information signature, not stand-alone application must store the signature private key on the server side, and sign operation on the server side.
         //在服务端进行签名的cp可以将getStringForSign返回的待签名字符串传给服务端进行签名 | The CP, signed on the server side, can pass the pending signature string returned by Getstringforsign to the service side for signature
-        payReq.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(payReq), pay_priv_key);
+        // payReq.sign = PaySignUtil.rsaSign(PaySignUtil.getStringForSign(payReq), pay_priv_key);
 
         return payReq;
     }

@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.huawei.android.hms.agent.HMSAgent;
-import com.huawei.android.hms.agent.sns.Handler.GetMsgSendIntentHandler;
-import com.huawei.android.hms.agent.sns.Handler.GetUiIntentHandler;
 import com.huawei.hms.support.api.entity.sns.Constants;
 import com.huawei.hms.support.api.entity.sns.SNSCode;
 import com.huawei.hms.support.api.entity.sns.SnsMsg;
@@ -36,39 +34,39 @@ public class SnsActivity extends AgentBaseActivity {
 
 
     private void goSnsUI(final int type, final long param){
-        showLog("goSnsUI: begin type=" + type + "param=" + param);
-        HMSAgent.Sns.getUiIntent(type, param, new GetUiIntentHandler() {
-            @Override
-            public void onResult(int retnCode, Intent intent) {
-            if (intent != null) {
-                SnsActivity.this.startActivityForResult(intent, REQUEST_GET_UI_INTENT);
-            } else {
-                if(retnCode == SNSCode.Status.HWID_UNLOGIN) {
-                    showLog("goSnsUI:end Failed to start the SNS page because the account is not logged in");
-                } else {
-                    showLog("goSnsUI:end error: " + retnCode + " with type=" + type+" param=" + param);
-                }
-            }
-            }
-        });
+//        showLog("goSnsUI: begin type=" + type + "param=" + param);
+//        HMSAgent.Sns.getUiIntent(type, param, new GetUiIntentHandler() {
+//            @Override
+//            public void onResult(int retnCode, Intent intent) {
+//            if (intent != null) {
+//                SnsActivity.this.startActivityForResult(intent, REQUEST_GET_UI_INTENT);
+//            } else {
+//                if(retnCode == SNSCode.Status.HWID_UNLOGIN) {
+//                    showLog("goSnsUI:end Failed to start the SNS page because the account is not logged in");
+//                } else {
+//                    showLog("goSnsUI:end error: " + retnCode + " with type=" + type+" param=" + param);
+//                }
+//            }
+//            }
+//        });
     }
 
     private void sendMsg(){
-        showLog("sendMsg: begin");
-        HMSAgent.Sns.getMsgSendIntent(createSnsMsg(), true, new GetMsgSendIntentHandler() {
-            @Override
-            public void onResult(int retnCode, Intent intent) {
-                if (intent != null) {
-                    SnsActivity.this.startActivityForResult(intent, REQUEST_GET_SENDMSG_INTENT);
-                } else {
-                    if(retnCode == SNSCode.Status.HWID_UNLOGIN) {
-                        showLog("sendMsg: Failed to start the SNS page because the account is not logged in");
-                    } else {
-                        showLog("sendMsg: error: " + retnCode);
-                    }
-                }
-            }
-        });
+//        showLog("sendMsg: begin");
+//        HMSAgent.Sns.getMsgSendIntent(createSnsMsg(), true, new GetMsgSendIntentHandler() {
+//            @Override
+//            public void onResult(int retnCode, Intent intent) {
+//                if (intent != null) {
+//                    SnsActivity.this.startActivityForResult(intent, REQUEST_GET_SENDMSG_INTENT);
+//                } else {
+//                    if(retnCode == SNSCode.Status.HWID_UNLOGIN) {
+//                        showLog("sendMsg: Failed to start the SNS page because the account is not logged in");
+//                    } else {
+//                        showLog("sendMsg: error: " + retnCode);
+//                    }
+//                }
+//            }
+//        });
     }
 
     /**
